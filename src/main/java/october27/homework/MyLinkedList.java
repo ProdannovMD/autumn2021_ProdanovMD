@@ -15,9 +15,10 @@ public class MyLinkedList<T> implements List<T> {
             this.prev = this;
         }
 
-        public Node(E element) {
-            this();
+        public Node(E element, Node<E> header) {
             this.element = element;
+            this.next = header;
+            this.prev = header;
         }
 
         public Node(E element, Node<E> next, Node<E> prev) {
@@ -71,7 +72,7 @@ public class MyLinkedList<T> implements List<T> {
 
         @Override
         public boolean hasNext() {
-            return current.getNext() != current;
+            return current.getNext() != myList.header;
         }
 
         @Override
@@ -86,7 +87,7 @@ public class MyLinkedList<T> implements List<T> {
 
         @Override
         public boolean hasPrevious() {
-            return current != myList.header && current.getPrev() != current;
+            return current != myList.header && current.getPrev() != myList.header;
         }
 
         @Override
@@ -134,7 +135,7 @@ public class MyLinkedList<T> implements List<T> {
             return 0;
         }
         int cnt = 1;
-        while (current != current.getNext()) {
+        while (header != current.getNext()) {
             cnt++;
             current = current.getNext();
         }
@@ -153,7 +154,7 @@ public class MyLinkedList<T> implements List<T> {
         if (current == header) {
             return false;
         }
-        while (current != current.getNext()) {
+        while (header != current.getNext()) {
             if (current.getElement().equals(o))
                 return true;
             current = current.getNext();
@@ -192,7 +193,7 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
-        Node<T> node = new Node<T>(t);
+        Node<T> node = new Node<T>(t, header);
         if (header.getNext() == header) {
             header.setNext(node);
             header.setPrev(node);
@@ -297,8 +298,8 @@ public class MyLinkedList<T> implements List<T> {
             index--;
         }
 
-        Node<T> newNode = new Node<>(element);
-        if (current.getPrev() == current) {
+        Node<T> newNode = new Node<>(element, header);
+        if (current.getPrev() == header) {
             current.setPrev(newNode);
             newNode.setNext(current);
             header.setNext(newNode);
@@ -331,10 +332,10 @@ public class MyLinkedList<T> implements List<T> {
         Node<T> curPrev = current.getPrev();
         Node<T> curNext = current.getNext();
         if (curPrev == current) {
-            curNext.setPrev(curNext);
+            curNext.setPrev(header);
             header.setNext(curNext);
         } else if (curNext == current) {
-            curPrev.setNext(curPrev);
+            curPrev.setNext(header);
             header.setPrev(curPrev);
         } else {
             curNext.setPrev(curPrev);
@@ -357,7 +358,7 @@ public class MyLinkedList<T> implements List<T> {
             }
             i++;
             current = current.getNext();
-        } while (current != current.getNext());
+        } while (header != current.getNext());
 
         return -1;
     }
@@ -376,7 +377,7 @@ public class MyLinkedList<T> implements List<T> {
             }
             i--;
             current = current.getPrev();
-        } while (current != current.getPrev());
+        } while (header != current.getPrev());
 
         return -1;
     }
