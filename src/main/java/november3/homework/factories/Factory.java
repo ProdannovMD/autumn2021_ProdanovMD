@@ -49,7 +49,7 @@ public class Factory {
             try {
                 if (aClass.isInterface()) {
                     List<Class<?>> implementations = classes.stream()
-                            .filter(c -> StudentService.class.isAssignableFrom(c) && !c.isInterface())
+                            .filter(c -> aClass.isAssignableFrom(c) && !c.isInterface())
                             .filter(c -> c.isAnnotationPresent(Priority.class))
                             .collect(Collectors.toList());
                     if (implementations.size() == 0)
