@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="autumn2021_ProdanovMD" />
+        <module name="calculator" />
+        <module name="second-maven-project" />
       </profile>
     </annotationProcessing>
   </component>
