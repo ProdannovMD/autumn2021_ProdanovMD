@@ -7,6 +7,15 @@ public class Verb {
     private String pastSimple;
     private String pastParticiple;
     private String rusName;
+    private long id = 0;
+
+    public Verb(String infinitive, String pastSimple, String pastParticiple, String rusName, long id) {
+        this.infinitive = infinitive;
+        this.pastSimple = pastSimple;
+        this.pastParticiple = pastParticiple;
+        this.rusName = rusName;
+        this.id = id;
+    }
 
     public Verb(String infinitive, String pastSimple, String pastParticiple, String rusName) {
         this.infinitive = infinitive;
@@ -54,6 +63,7 @@ public class Verb {
                 ", pastSimple='" + pastSimple + '\'' +
                 ", pastParticiple='" + pastParticiple + '\'' +
                 ", rusName='" + rusName + '\'' +
+                ", id=" + id +
                 '}';
     }
 
