@@ -6,9 +6,10 @@ import november26.classwork.SolarSystem;
 import november26.classwork.Star;
 import november26.classwork.configs.SolarSystemConfiguration;
 import november26.classwork.configs.SolarSystemConfiguration2;
+import november26.classwork.exceptions.MultipleBeansException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MultipleBeansException {
         ApplicationContext.init(SolarSystemConfiguration.class);
         ApplicationContext.init(SolarSystemConfiguration2.class);
 

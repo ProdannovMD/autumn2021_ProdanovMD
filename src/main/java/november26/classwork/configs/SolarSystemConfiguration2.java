@@ -6,11 +6,6 @@ import november26.classwork.annotations.Bean;
 
 public class SolarSystemConfiguration2 {
     @Bean
-    public static Star getStar() {
-        return new Star("White star");
-    }
-
-    @Bean
     public static Planet getPlanet1() {
         return new Planet("Nibiru");
     }
