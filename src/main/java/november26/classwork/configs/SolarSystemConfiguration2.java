@@ -1,7 +1,6 @@
 package november26.classwork.configs;
 
 import november26.classwork.Planet;
-import november26.classwork.Star;
 import november26.classwork.annotations.Bean;
 
 public class SolarSystemConfiguration2 {
