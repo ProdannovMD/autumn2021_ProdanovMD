@@ -9,6 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="calculator" />
         <module name="second-maven-project" />
+        <module name="6.12.2021" />
+        <module name="3.12.2021" />
       </profile>
     </annotationProcessing>
   </component>

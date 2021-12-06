@@ -11,6 +11,8 @@
     <modules>
         <module>calculator</module>
         <module>second-maven-project</module>
+        <module>3.12.2021</module>
+        <module>6.12.2021</module>
     </modules>
 
     <properties>
