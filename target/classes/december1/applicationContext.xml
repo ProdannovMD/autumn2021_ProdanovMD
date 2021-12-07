@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <context:annotation-config/>
+    <context:component-scan base-package="december1.homework"/>
+
+    <bean id="carParent" abstract="true" class="december1.homework.domain.Car">
+        <property name="age" value="-1"/>
+    </bean>
+
+    <bean id="firstCar" parent="carParent" scope="singleton">
+        <constructor-arg index="0" value="Порш"/>
+        <property name="age" value="10"/>
+        <property name="run" ref="fly"/>
+    </bean>
+
+    <bean id="secondCar" parent="carParent" scope="prototype">
+        <constructor-arg index="0" value="Лада"/>
+        <property name="list">
+            <util:list>
+                <value>Ваня</value>
+                <value>Петя</value>
+            </util:list>
+        </property>
+        <property name="run" ref="norun"/>
+    </bean>
+
+    <bean id="fly" class="december1.homework.domain.Run">
+        <constructor-arg index="0" value="Я лечу, я не машина!!!"/>
+    </bean>
+
+    <bean id="norun" class="december1.homework.domain.Run">
+        <constructor-arg index="0" value="Кто-то снял колеса!!!"/>
+    </bean>
+
+
+</beans>
