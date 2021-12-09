@@ -58,5 +58,5 @@
         </constructor-arg>
     </bean>
 
-    <bean id="SolarSystemAutowired" class="com.netcracker.spring.SolarSystem" init-method="init"/>
+    <bean id="SolarSystemAutowired" class="com.netcracker.spring.SolarSystem" init-method="init" autowire="constructor"/>
 </beans>

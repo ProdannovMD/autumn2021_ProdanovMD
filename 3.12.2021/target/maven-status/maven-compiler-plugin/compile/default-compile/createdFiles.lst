@@ -1,0 +1,6 @@
+com\netcracker\spring\Planet.class
+com\netcracker\spring\Star.class
+com\netcracker\spring\StaticFactory.class
+com\netcracker\spring\SolarSystem.class
+com\netcracker\spring\NonStaticFactory.class
+com\netcracker\spring\Main.class

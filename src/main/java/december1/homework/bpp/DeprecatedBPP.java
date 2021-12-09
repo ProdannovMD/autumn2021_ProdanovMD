@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Constructor;
 
-@Component
 public class DeprecatedBPP implements SmartInstantiationAwareBeanPostProcessor {
 
     @Override

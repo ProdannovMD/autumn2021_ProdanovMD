@@ -10,8 +10,12 @@
         <module name="calculator" />
         <module name="second-maven-project" />
         <module name="6.12.2021" />
+        <module name="08.12.2021" />
         <module name="3.12.2021" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="8.12.2021" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
