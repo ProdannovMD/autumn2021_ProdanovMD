@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/08.12.2021" />
+    <file type="web" url="file://$PROJECT_DIR$/10.12.2021" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/docs" />
@@ -11,6 +12,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/10.12.2021/pom.xml" />
+        <option value="$PROJECT_DIR$/13.12.2021/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

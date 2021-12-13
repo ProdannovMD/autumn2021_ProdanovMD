@@ -8,14 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="calculator" />
-        <module name="second-maven-project" />
-        <module name="6.12.2021" />
         <module name="08.12.2021" />
         <module name="3.12.2021" />
+        <module name="13.12.2021" />
+        <module name="10.12.2021" />
+        <module name="second-maven-project" />
+        <module name="6.12.2021" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="8.12.2021" target="8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="10.12.2021" options="-parameters" />
+      <module name="13.12.2021" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -15,7 +15,9 @@ public class SolarSystem {
 
     @NotNull
     private String name;
+    @NotNull
     private Star star;
+    @NotNull
     private List<Planet> planets;
     private ApplicationContext applicationContext;
     private List<String> nullFields;
