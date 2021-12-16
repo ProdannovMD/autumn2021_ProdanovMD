@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.Optional;
 
-@Component
+//@Component
 public class Test {
     ApplicationContext context;
 

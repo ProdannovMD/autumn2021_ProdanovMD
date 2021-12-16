@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="calculator" />
         <module name="08.12.2021" />
+        <module name="15.12.2021" />
         <module name="3.12.2021" />
         <module name="13.12.2021" />
         <module name="10.12.2021" />
@@ -24,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="10.12.2021" options="-parameters" />
       <module name="13.12.2021" options="-parameters" />
+      <module name="15.12.2021" options="-parameters" />
     </option>
   </component>
 </project>

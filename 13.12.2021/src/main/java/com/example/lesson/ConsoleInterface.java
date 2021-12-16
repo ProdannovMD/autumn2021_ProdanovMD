@@ -12,7 +12,7 @@ import java.util.Locale;
 import java.util.Optional;
 import java.util.Scanner;
 
-@Component
+//@Component
 public class ConsoleInterface {
     private final StarRepository starRepository;
 
@@ -65,6 +65,7 @@ public class ConsoleInterface {
                 return;
             }
             System.out.print("Enter new name: ");
+            scanner.nextLine();
             String name = scanner.nextLine();
             star.setName(name);
             starRepository.save(star);
