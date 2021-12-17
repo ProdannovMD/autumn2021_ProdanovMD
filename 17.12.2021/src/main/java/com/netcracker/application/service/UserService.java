@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,10 +16,12 @@ import java.util.Objects;
 public class UserService {
 
     private final UserCache userCache;
+    private final MessageDigest hash;
 
     @Autowired
-    public UserService(UserCache userCache) {
+    public UserService(UserCache userCache, MessageDigest hash) {
         this.userCache = userCache;
+        this.hash = hash;
     }
 
     public List<User> getAll() {
@@ -29,6 +33,7 @@ public class UserService {
     }
 
     public void create(User user) {
+        user.setPassword(hashPassword(user.getPassword()));
         userCache.save(user);
     }
 
@@ -41,12 +46,26 @@ public class UserService {
             userForUpdate.setName(user.getName());
         if (Objects.nonNull(user.getEmail()))
             userForUpdate.setEmail(user.getEmail());
-        if (Objects.nonNull(user.getPassword()))
-            userForUpdate.setPassword(user.getPassword());
+        if (Objects.nonNull(user.getPassword())) {
+            userForUpdate.setPassword(hashPassword(user.getPassword()));
+        }
 
+    }
+
+    private String hashPassword(String password) {
+        byte[] digest = hash.digest(password.getBytes(StandardCharsets.UTF_8));
+        return new String(digest);
     }
 
     public void delete(Integer id) {
         userCache.delete(id);
+    }
+
+    public boolean checkPassword(Integer id, User user) {
+        User foundUser = userCache.getById(id);
+        if (Objects.isNull(foundUser))
+            throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
+
+        return foundUser.getPassword().equals(hashPassword(user.getPassword()));
     }
 }
